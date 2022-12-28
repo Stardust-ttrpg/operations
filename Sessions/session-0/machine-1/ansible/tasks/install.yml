@@ -1,0 +1,35 @@
+- name: Create commons folder
+  file:
+    state: directory
+    path: commons
+    mode: 0550
+    owner: ubuntu
+    group: ubuntu
+
+- name: Copy commons folder contents
+  copy:
+    dest: commons
+    src: templates/commons/
+    owner: ubuntu
+    group: ubuntu
+
+#--------------------------------------------------#
+#--------------------------------------------------#
+#--------------------------------------------------#
+
+- name: Create locked folder
+  file:
+    state: directory
+    path: "{{ user }}"
+    mode: 0500
+    owner: "{{ user }}"
+    group: "{{ user }}"
+  
+
+- name: Copy locked folder contents
+  copy:
+    dest: locked
+    src: templates/"{{ user }}"/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+  

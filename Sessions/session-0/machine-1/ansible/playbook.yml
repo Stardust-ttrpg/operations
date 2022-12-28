@@ -1,0 +1,8 @@
+- hosts: bitops_servers
+  become: true
+  tasks:
+  - include_vars: vars.yml
+  - name: Create User
+    include_tasks: tasks/user.yml
+  - name: Include install
+    include_tasks: tasks/install.yml

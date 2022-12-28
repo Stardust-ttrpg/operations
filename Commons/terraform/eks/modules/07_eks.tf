@@ -2,7 +2,7 @@
 resource "aws_eks_cluster" "Stardust-Cluster" {
   name     = "${ var.cluster_prefix }-Cluster"
   role_arn = aws_iam_role.Stardust-Cluser-Iam-Role.arn
-  version  = "1.21"
+  version  = "1.22"
 
   vpc_config {
     # security_group_ids      = [aws_security_group.eks_cluster.id, aws_security_group.eks_nodes.id]
