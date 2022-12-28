@@ -28,3 +28,12 @@ variable "availability_zones_count" {
   type        = number
   default     = 2
 }
+
+variable instance_types {
+  type = list(string)
+}
+
+variable disk_size {
+  type = number
+  default = 20
+}

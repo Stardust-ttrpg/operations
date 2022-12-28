@@ -1,6 +1,6 @@
 # EKS Cluster
 resource "aws_eks_cluster" "Stardust-Cluster" {
-  name     = "${ var.resource_prefix }-Cluster"
+  name     = "${ var.cluster_prefix }-Cluster"
   role_arn = aws_iam_role.Stardust-Cluser-Iam-Role.arn
   version  = "1.21"
 
@@ -15,7 +15,7 @@ resource "aws_eks_cluster" "Stardust-Cluster" {
   tags = merge(
       var.common_tags,
       {
-        Name = "${ var.resource_prefix }-Cluster"
+        Name = "${ var.cluster_prefix }-Cluster"
       })
 
   depends_on = [

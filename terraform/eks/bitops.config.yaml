@@ -1,8 +1,0 @@
-terraform:
-  cli:  
-    backend-config:
-        type: list
-        parameter: backend-config
-        dash_type: "-"
-    stack-action: destroy
-  options: {}
